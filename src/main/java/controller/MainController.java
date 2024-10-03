@@ -1,24 +1,14 @@
 package controller;
 
-import domain.BankAccount;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
-import repositories.BankAccountRepository;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Map;
-
-@Controller
+@RestController
 public class MainController {
 
-    @GetMapping("/")
-    public String home (Map<String,Object> model){
-        return "home";
-    }
-    @PostMapping("/cab")
-    public String bankAccount(@RequestParam String userName, @RequestParam Integer pinCode, Map <String, Object> model){
-        BankAccount bankAccount = new BankAccount(userName,pinCode);
-//        BankAccountRepository.save(bankAccount);
-        return "cab";
-    }
+    @GetMapping
+    public void home (String user, int pin, Model model ){
 
+    }
 }
