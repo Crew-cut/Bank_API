@@ -1,12 +1,17 @@
 package domain;
 
 import jakarta.persistence.*;
+
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 public class User {
     @Id
     @GeneratedValue (strategy= GenerationType.AUTO)
     private long id;
 
+    @OneToMany
     private String name;
     private String surname;
 
