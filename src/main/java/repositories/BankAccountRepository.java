@@ -2,11 +2,11 @@ package repositories;
 
 import domain.BankAccount;
 import org.springframework.data.jpa.repository.*;
+import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
-import java.util.Optional;
 
-public interface BankAccountRepository extends JpaRepository<BankAccount, Long> {
+public interface BankAccountRepository extends CrudRepository<BankAccount, Long> {
     @Override
     List<BankAccount> findAll();
 

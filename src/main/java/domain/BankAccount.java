@@ -1,7 +1,6 @@
 package domain;
 
 import jakarta.persistence.*;
-import org.hibernate.Hibernate;
 
 import java.util.Objects;
 
@@ -15,6 +14,7 @@ public class BankAccount {
     private String userName;
 
     private int pinCode;
+    private long balance;
 
     public BankAccount() {
     }
@@ -46,6 +46,15 @@ public class BankAccount {
 
     public void setPinCode(int pinCode) {
         this.pinCode = pinCode;
+    }
+
+    public long getBalance() {
+        return balance;
+    }
+
+    public BankAccount setBalance(long balance) {
+        this.balance = balance;
+        return this;
     }
 
     @Override
