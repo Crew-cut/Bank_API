@@ -3,18 +3,18 @@ package com.bank.domain;
 import jakarta.persistence.*;
 
 @Entity
-public class User {
+public class Users {
     @Id
     @GeneratedValue (strategy= GenerationType.AUTO)
     private Long id;
-    @OneToMany
+//    @OneToMany
     private String name;
     private String surname;
 
-    public User() {
+    public Users() {
     }
 
-    public User(String name, String surname) {
+    public Users(String name, String surname) {
         this.name = name;
         this.surname = surname;
     }

@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="utf-8">
     <title>Registration</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
 <!--<div th:if="${param.error}">-->
@@ -11,14 +10,13 @@
 <!--<div th:if="${param.logout}">-->
 <!--    You have been logged out.-->
 <!--</div>-->
-Add New user
-<p>{{#message}}
-    {{message}}
-{{/message}}</p>
+Add New bank account
+<p>{{#account}}
+    {{account}}
+{{/account}}</p>
 <form action="/reg" method="post">
-    <div><label> User Name : <input type="text" name="name"/> </label></div>
-    <div><label> Password: <input type="text" name="surname"/> </label></div>
-    <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
+    <div><label> User Name: <input type="text" name="name"/> </label></div>
+    <div><label> Pin: <input type="password" name="pin"/> </label></div>
     <div><input type="submit" value="Registration"/></div>
 </form>
 </body>

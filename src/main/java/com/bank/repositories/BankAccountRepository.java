@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
 public interface BankAccountRepository extends JpaRepository<BankAccount, Long> {
+    @Query("select b from BankAccount b")
     @Override
     List<BankAccount> findAll();
 

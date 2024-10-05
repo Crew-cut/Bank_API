@@ -7,22 +7,24 @@
 <body>
 <div>
     <form method="post">
-        <input type="text" name="text" placeholder="user">
+        <input type="text" name="name" placeholder="name">
         <input type="text" name="surname" placeholder="surname">
         <button type="submit">Add</button>
     </form>
-    <div>List</div>
 </div>
+<form method="post" action="filter">
+    <input type="text" name="filter" placeholder="name">
+    <button type="submit">Search</button>
+</form>
+<div>List</div>
 {{#users}}
     <div>
         {{id}}
         <b>{{name}}</b>
         {{surname}}
     </div>
-
 {{/users}}
 
-<div>Hello, user</div>
-<a href="/reg">Main page</a>
+<a href="/reg">Create bank account</a>
 </body>
 </html>
