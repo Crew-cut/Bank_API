@@ -1,21 +1,22 @@
-package domain;
+package com.bank.domain;
 
 import jakarta.persistence.*;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 public class User {
     @Id
     @GeneratedValue (strategy= GenerationType.AUTO)
-    private long id;
-
+    private Long id;
     @OneToMany
     private String name;
     private String surname;
 
     public User() {
+    }
+
+    public User(String name, String surname) {
+        this.name = name;
+        this.surname = surname;
     }
 
     public long getId() {

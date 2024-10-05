@@ -1,6 +1,6 @@
-package repositories;
+package com.bank.repositories;
 
-import domain.TransactionHistory;
+import com.bank.domain.TransactionHistory;
 
 public interface TransactionHistoryRepository {
 

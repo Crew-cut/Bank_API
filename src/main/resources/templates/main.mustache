@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Home (Дома)</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div>
+    <form method="post">
+        <input type="text" name="text" placeholder="user">
+        <input type="text" name="surname" placeholder="surname">
+        <button type="submit">Add</button>
+    </form>
+    <div>List</div>
+</div>
+{{#users}}
+    <div>
+        {{id}}
+        <b>{{name}}</b>
+        {{surname}}
+    </div>
+
+{{/users}}
+
+<div>Hello, user</div>
+<a href="/reg">Main page</a>
+</body>
+</html>

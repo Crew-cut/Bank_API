@@ -1,18 +1,14 @@
-package controller;
+package com.bank.controller;
 
-import domain.BankAccount;
-import domain.User;
+import com.bank.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import repositories.BankAccountRepository;
-import repositories.UserRepo;
+import com.bank.repositories.UserRepo;
 
-import java.util.List;
 import java.util.Map;
 
 @RestController
-public class MainController {
+public class RegController {
     @Autowired
     private UserRepo userRepo;
 
@@ -21,7 +17,7 @@ public class MainController {
         return "home";
     }
     @PostMapping("/reg")
-    public String addBankAccount(@RequestParam User user, Map <String, Object> model){
+    public String addUser(@RequestParam User user, Map <String, Object> model){
         User userByName = userRepo.findByName(user.getName());
         if (userByName != null){
             model.put("message","User exists");
