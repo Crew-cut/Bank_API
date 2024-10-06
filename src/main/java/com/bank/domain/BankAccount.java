@@ -7,10 +7,10 @@ import java.util.Objects;
 @Entity
 public class BankAccount {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long bankAccount;
-//    @ManyToOne
-//    @JoinColumn(name = "name")
+    @ManyToOne
+    @JoinColumn(name = "name")
     private String userName;
 
     private int pinCode;

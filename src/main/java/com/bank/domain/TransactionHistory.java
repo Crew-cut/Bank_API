@@ -11,12 +11,17 @@ import java.util.Objects;
 public class TransactionHistory {
 
     @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
+    @GeneratedValue (strategy = GenerationType.AUTO)
     private Long id;
     private String history;
     private String userName;
 
     public TransactionHistory() {
+    }
+
+    public TransactionHistory(String history, String userName) {
+        this.history = history;
+        this.userName = userName;
     }
 
     public long getId() {

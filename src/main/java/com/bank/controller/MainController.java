@@ -2,12 +2,15 @@ package com.bank.controller;
 
 import com.bank.domain.Users;
 import com.bank.repositories.UserRepo;
+import com.fasterxml.jackson.annotation.OptBoolean;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.geo.GeoResult;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 @Controller
 public class MainController {
@@ -30,13 +33,13 @@ public class MainController {
 
     @PostMapping ("filter")
     public String filter (@RequestParam String filter, Map<String, Object> model){
-        List<Users> users;
-        if (filter !=null && filter.isEmpty()){
-            users = userRepo.findByName(filter);
+        Iterable<Users> users;
+        if (filter !=null && !filter.isEmpty()){
+            users = userRepo.findByNameIgnoreCase(filter);
         }else{
             users = userRepo.findAll();
         }
-        model.put("filter",users);
+        model.put("users", users);
         return "main";
     }
 }

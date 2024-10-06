@@ -7,7 +7,7 @@ public class Users {
     @Id
     @GeneratedValue (strategy= GenerationType.AUTO)
     private Long id;
-//    @OneToMany
+
     private String name;
     private String surname;
 

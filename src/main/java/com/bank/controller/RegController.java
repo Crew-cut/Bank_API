@@ -24,5 +24,4 @@ public class RegController {
         bankAccountRepository.save(new BankAccount(name,pin));
         return "redirect:/";
     }
-
 }
