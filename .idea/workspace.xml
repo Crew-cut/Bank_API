@@ -5,17 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2839fa60-7e25-46de-8d23-4fbc12f8625d" name="Changes" comment="3">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bank/controller/TransactionController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/transaction.mustache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bank/DTO/RegDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/userNotExist.mustache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bank/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/controller/MainController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bank/controller/RegController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/controller/RegController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bank/domain/BankAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/domain/BankAccount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bank/domain/TransactionHistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/domain/TransactionHistory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bank/domain/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/domain/Users.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bank/repositories/TransactionHistoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/repositories/TransactionHistoryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bank/repositories/BankAccountRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/repositories/BankAccountRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bank/repositories/UserRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/repositories/UserRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/main.mustache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/transaction.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/transaction.mustache" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,7 +135,14 @@
       <option name="project" value="LOCAL" />
       <updated>1728168237149</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="3">
+      <created>1728241873220</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1728241873221</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

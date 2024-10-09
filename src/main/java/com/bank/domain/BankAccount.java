@@ -1,6 +1,7 @@
 package com.bank.domain;
 
 import jakarta.persistence.*;
+import org.springframework.beans.factory.annotation.Value;
 
 import java.util.Objects;
 
@@ -9,18 +10,20 @@ public class BankAccount {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long bankAccount;
-    @ManyToOne
-    @JoinColumn(name = "name")
-    private String userName;
+
 
     private int pinCode;
     private long balance;
 
+    @ManyToOne (fetch = FetchType.EAGER)
+    @JoinColumn(name = "user_id")
+    private Users userId;
+
     public BankAccount() {
     }
 
-    public BankAccount(String userName, Integer pinCode) {
-        this.userName = userName;
+    public BankAccount(Users userId, Integer pinCode) {
+        this.userId = userId;
         this.pinCode = pinCode;
         this.balance = 0;
     }
@@ -33,12 +36,12 @@ public class BankAccount {
         this.bankAccount = bankAccount;
     }
 
-    public String getUserName() {
-        return userName;
+    public Users getUserId() {
+        return userId;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUserId(Users userId) {
+        this.userId = userId;
     }
 
     public int getPinCode() {
@@ -63,11 +66,11 @@ public class BankAccount {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         BankAccount that = (BankAccount) o;
-        return bankAccount == that.bankAccount && userName.equals(that.userName) && pinCode == that.pinCode;
+        return bankAccount == that.bankAccount && userId == that.userId && pinCode == that.pinCode;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(bankAccount, userName);
+        return Objects.hash(bankAccount, userId);
     }
 }

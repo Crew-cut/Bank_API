@@ -11,9 +11,9 @@ public interface BankAccountRepository extends JpaRepository<BankAccount, Long> 
     @Override
     List<BankAccount> findAll();
 
-    @Query("select b from BankAccount b where upper(b.userName) = upper(?1)")
-    List<BankAccount> findByUserNameIgnoreCase(String userName);
+    @Query("select b from BankAccount b where upper(b.userId) = upper(?1)")
+    List<BankAccount> findByUserIdIgnoreCase(String userName);
 
-    @Query("select b from BankAccount b where b.userName = ?1")
-    List<BankAccount> findByUserName(String userName);
+    @Query("select b from BankAccount b where b.userId = ?1")
+    List<BankAccount> findByUserId(String userName);
 }

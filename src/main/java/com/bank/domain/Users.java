@@ -1,13 +1,15 @@
 package com.bank.domain;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
 @Entity
 public class Users {
     @Id
     @GeneratedValue (strategy= GenerationType.AUTO)
-    private Long id;
-
+    private long id;
     private String name;
     private String surname;
 
