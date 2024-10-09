@@ -1,8 +1,6 @@
 package com.bank.domain;
 
 import jakarta.persistence.*;
-import org.springframework.beans.factory.annotation.Value;
-
 import java.util.Objects;
 
 @Entity

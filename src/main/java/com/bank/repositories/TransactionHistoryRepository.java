@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface TransactionHistoryRepository extends JpaRepository<TransactionHistory,Long> {
 
-    List<TransactionHistory> findByUserName (String userName);
+    List<TransactionHistory> findByRecipientId (Long recipientId);
 }

@@ -14,14 +14,21 @@ public class TransactionHistory {
     @GeneratedValue (strategy = GenerationType.AUTO)
     private Long id;
     private String history;
-    private String userName;
+    private Long recipientId;
+    private Long senderId;
 
     public TransactionHistory() {
     }
 
-    public TransactionHistory(String history, String userName) {
+    public TransactionHistory(String history, Long recipientId) {
         this.history = history;
-        this.userName = userName;
+        this.recipientId = recipientId;
+    }
+
+    public TransactionHistory(String history, Long recipientId, Long senderId) {
+        this.history = history;
+        this.recipientId = recipientId;
+        this.senderId = senderId;
     }
 
     public long getId() {
@@ -42,13 +49,19 @@ public class TransactionHistory {
         return this;
     }
 
-    public String getUserName() {
-        return userName;
+    public Long getRecipientId() {
+        return recipientId;
     }
 
-    public TransactionHistory setUserName(String userName) {
-        this.userName = userName;
+    public TransactionHistory setRecipientId(Long recipientId) {
+        this.recipientId = recipientId;
         return this;
+    }
+    public Long getSenderId() {
+        return senderId;
+    }
+    public void setSenderId(Long senderId) {
+        this.senderId = senderId;
     }
 
     @Override
@@ -56,11 +69,11 @@ public class TransactionHistory {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         TransactionHistory that = (TransactionHistory) o;
-        return id == that.id && Objects.equals(history, that.history) && Objects.equals(userName, that.userName);
+        return id == that.id && Objects.equals(history, that.history) && Objects.equals(recipientId, that.recipientId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, history, userName);
+        return Objects.hash(id, history, recipientId);
     }
 }
