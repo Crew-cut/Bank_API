@@ -11,13 +11,17 @@
 <!--    You have been logged out.-->
 <!--</div>-->
 Add New bank account
-<p>{{#account}}
-    {{account}}
-{{/account}}</p>
-<form action="/reg" method="post">
-    <div><label> User Name: <input type="text" name="name"/> </label></div>
-    <div><label> Pin: <input type="password" name="pin"/> </label></div>
-    <div><input type="submit" value="Registration"/></div>
+<p>{{#accounts}}
+    <div>
+        {{name}}
+        {{surname}}
+    </div>
+{{/accounts}}</p>
+<form method="post" action="reg">
+    <div><label> User Name: <input type="text" name="surname"/> </label></div>
+    <div><label> Pin: <input type="password" maxlength=4 name="pin"/> </label></div>
+    <input type="hidden" name="_csrf" value="{{_csrf.token}}">
+    <div><button type="submit">Registration</button></div>
 </form>
 </body>
 </html>
