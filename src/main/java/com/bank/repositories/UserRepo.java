@@ -13,4 +13,7 @@ public interface UserRepo extends JpaRepository <Users, Long> {
 
     Users findFirstBySurname (String surname);
 
+    Optional<Users> findByLogin (String login);
+
+
 }

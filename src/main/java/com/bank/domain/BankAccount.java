@@ -1,6 +1,7 @@
 package com.bank.domain;
 
 import jakarta.persistence.*;
+
 import java.util.Objects;
 
 @Entity
@@ -16,6 +17,7 @@ public class BankAccount {
     @ManyToOne (fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id")
     private Users userId;
+
 
     public BankAccount() {
     }
@@ -34,12 +36,12 @@ public class BankAccount {
         this.bankAccount = bankAccount;
     }
 
-    public Users getUserId() {
+    public Users getUserName() {
         return userId;
     }
 
-    public void setUserId(Users userId) {
-        this.userId = userId;
+    public void setUserName(Users userName) {
+        this.userId = userName;
     }
 
     public int getPinCode() {
@@ -64,11 +66,11 @@ public class BankAccount {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         BankAccount that = (BankAccount) o;
-        return bankAccount == that.bankAccount && userId == that.userId && pinCode == that.pinCode;
+        return bankAccount == that.bankAccount && userId.equals(that.userId) && pinCode == that.pinCode;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(bankAccount, userId);
+        return Objects.hash(bankAccount, userId, pinCode);
     }
 }

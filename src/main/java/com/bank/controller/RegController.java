@@ -5,13 +5,14 @@ import com.bank.domain.Users;
 import com.bank.repositories.BankAccountRepository;
 import com.bank.repositories.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
-import java.util.stream.Collectors;
 
 @Controller
 public class RegController {
@@ -27,7 +28,7 @@ public class RegController {
         return "reg";
     }
     @PostMapping("reg")
-    public String addUser(@RequestParam String surname, @RequestParam int pin, Map <String, Object> model){
+    public String addUser(@RequestParam String surname, @RequestParam @NonNull Integer pin, Map <String, Object> model){
         Users user;
         List<Users> users = userRepo.findBySurnameIgnoreCase(surname);
         if (users.size() != 0){

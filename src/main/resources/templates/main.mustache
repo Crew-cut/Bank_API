@@ -1,20 +1,27 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Home (Дома)</title>
+    <title>Home</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
 <div>
-    <form method="post">
+    <form method="post" action="logout" >
+        <input type="hidden" name="_csrf" value="{{_csrf.token}}">
+        <button type="submit" >Sign Out</button>
+    </form>
+</div>
+<div></div>
+<div>
+    <form method="post" action="/">
         <input type="text" name="name" placeholder="name">
         <input type="text" name="surname" placeholder="surname">
         <input type="hidden" name="_csrf" value="{{_csrf.token}}">
         <button type="submit">Add</button>
     </form>
 </div>
-<form method="post" action="filter">
-    <input type="text" name="filter" placeholder="name">
+<form method="post" action="/filter">
+    <input type="text" name="filter" placeholder="surname">
     <input type="hidden" name="_csrf" value="{{_csrf.token}}">
     <button type="submit">Search</button>
 </form>
@@ -28,5 +35,6 @@
 {{/users}}
 
 <a href="/reg">Create bank account</a>
+<a href="/transaction">My bank accounts</a>
 </body>
 </html>

@@ -7,8 +7,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-
 import java.util.List;
 import java.util.Map;
 
@@ -30,7 +28,6 @@ public class MainController {
         model.put("users",users);
         return "main";
     }
-
     @PostMapping ("filter")
     public String filter (@RequestParam String filter,Map<String, Object> model){
         List<Users> users;
@@ -40,6 +37,6 @@ public class MainController {
             users = userRepo.findAll();
         }
         model.put("users", users);
-        return "/";
+        return "main";
     }
 }

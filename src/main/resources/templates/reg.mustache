@@ -4,12 +4,15 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-<!--<div th:if="${param.error}">-->
-<!--    Invalid username and password.-->
-<!--</div>-->
-<!--<div th:if="${param.logout}">-->
-<!--    You have been logged out.-->
-<!--</div>-->
+<!--<div if="{param.error}">
+    Invalid username and password.
+</div>-->
+<div>
+    <form method="post" action="logout">
+        <input type="hidden" name="_csrf" value="{{_csrf.token}}">
+        <button type="submit">Sign Out</button>
+    </form>
+</div>
 Add New bank account
 <p>{{#accounts}}
     <div>
@@ -17,11 +20,12 @@ Add New bank account
         {{surname}}
     </div>
 {{/accounts}}</p>
-<form method="post" action="reg">
+<form action="reg" method="post">
     <div><label> User Name: <input type="text" name="surname"/> </label></div>
-    <div><label> Pin: <input type="password" maxlength=4 name="pin"/> </label></div>
+    <div><label> Pin: <input type="password" minlength=1 maxlength=4 name="pin"/> </label></div>
     <input type="hidden" name="_csrf" value="{{_csrf.token}}">
-    <div><button type="submit">Registration</button></div>
+    <div><button type="submit" >Registration</button></div>
 </form>
+<a href="/">Back</a>
 </body>
 </html>

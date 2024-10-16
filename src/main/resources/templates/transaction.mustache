@@ -5,15 +5,23 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
+<div>
+    <form method="post" action="logout">
+        <input type="hidden" name="_csrf" value="{{_csrf.token}}">
+        <button type="submit">Sign Out</button>
+    </form>
+</div>
 {{#transaction}}
     <div>
-    {{id}}
     {{histoty}}
     {{userId}}
     </div>
 {{/transaction}}
-<input type="text" name="transaction" placeholder="transaction">
-<input type="text" name="name" placeholder="name">
-<button type="submit">Create transaction</button>
+<form>
+    <input type="text" name="transaction" placeholder="transaction">
+    <input type="text" name="name" placeholder="name">
+    <input type="hidden" name="_csrf" value="{{_csrf.token}}">
+    <button type="submit">Create transaction</button>
+</form>
 </body>
 </html>

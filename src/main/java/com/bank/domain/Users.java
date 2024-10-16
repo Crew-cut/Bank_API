@@ -9,9 +9,12 @@ import jakarta.persistence.Id;
 public class Users {
     @Id
     @GeneratedValue (strategy= GenerationType.AUTO)
-    private long id;
+    private Long id;
     private String name;
     private String surname;
+    private String login;
+    private String password;
+    private String role; //Eg: ADMIN,USER
 
     public Users() {
     }
@@ -21,11 +24,18 @@ public class Users {
         this.surname = surname;
     }
 
-    public long getId() {
+    public Users(String name, String surname, String password, String role) {
+        this.name = name;
+        this.surname = surname;
+        this.password = password;
+        this.role = role;
+    }
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -43,5 +53,32 @@ public class Users {
 
     public void setSurname(String surname) {
         this.surname = surname;
+    }
+
+    public String getLogin() {
+        return login;
+    }
+
+    public Users setLogin(String login) {
+        this.login = login;
+        return this;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public Users setPassword(String password) {
+        this.password = password;
+        return this;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public Users setRole(String role) {
+        this.role = role;
+        return this;
     }
 }
